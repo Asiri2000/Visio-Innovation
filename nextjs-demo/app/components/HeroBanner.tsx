@@ -1,35 +1,34 @@
 "use client";
 import { Box, Typography, Button } from '@mui/material';
+import PlaceIcon from '@mui/icons-material/Place';
+import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
 
 export default function HeroBanner() {
   return (
-    <Box sx={{
-      height: '80vh',
-      backgroundImage: 'url("https://source.unsplash.com/random/1920x1080/?srilanka,nature")',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      position: 'relative',
-      '&::before': {
-        content: '""',
-        position: 'absolute',
-        top: 0, left: 0, right: 0, bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.4)' // Dark overlay
-      }
+    <Box  sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '50vh', // Adjust height as needed
+        color: '#fff',
+        textAlign: 'center',
+      
     }}>
       <Box sx={{ position: 'relative', zIndex: 1, color: '#fff', px: 2 }}>
-        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+        <Typography variant="h1" sx={{ fontWeight: '10px', mb: 2, fontFamily: "Minion Pro, Georgia, Times New Roman, serif" }}>
+          Blue Lanka Tours
+        </Typography>
+        <Typography variant="h3" sx={{ fontWeight: '10px', mb: 2, fontFamily: "Minion Pro, Georgia, Times New Roman, serif" }}>
           Hallmark of Sri Lankan Travel
         </Typography>
-        <Typography variant="h5" sx={{ mb: 4, fontStyle: 'italic' }}>
-          Curated Itineraries | Tailormade Experiences
+        <Typography variant="h5" sx={{ mb: 4,  paddingTop:'40px',  }}>
+          <Button variant="contained" sx={{ borderRadius: '20px', mr: 2 ,height:'50px'}}>
+            Curated Itineraries <PlaceIcon />
+          </Button>
+          <Button variant="contained" sx={{ borderRadius: '20px' ,backgroundColor:'#d13b24', height:'50px' }}>
+            Tailormade Experiences <DisplaySettingsIcon /> 
+          </Button>
         </Typography>
-        <Button variant="contained" size="large" sx={{ bgcolor: '#d97706', px: 4, py: 1.5 }}>
-          Plan Your Trip
-        </Button>
       </Box>
     </Box>
   );
