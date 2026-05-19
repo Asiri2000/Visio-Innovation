@@ -9,6 +9,7 @@ import CustomizedTour from '@/app/components/CustomizedTour';
 import OurTravelJourney from '@/app/components/OurTravelJourney';
 import AboutSection from '@/app/components/AboutSection';
 import NineArch from '@/app/components/NineArch';
+import IntroSectionTwo from '@/app/components/IntroSectionTwo';
 
 
 export default function Home() {
@@ -22,15 +23,16 @@ export default function Home() {
           backgroundPosition: 'center',
           height:'100vh'
         }}
-        ></Box>
-  
+        >
+         <Header />
         <HeroBanner />
       
-     
+     </Box>
       
       <main>
       
         <IntroSection />
+        <IntroSectionTwo />
         <Itineraries />
         <CustomizedTour />
         <OurTravelJourney />
