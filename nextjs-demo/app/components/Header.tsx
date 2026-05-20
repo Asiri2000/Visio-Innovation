@@ -29,7 +29,7 @@ export default function Header() {
       position="sticky"
       sx={{
         backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
-        boxShadow: scrolled ? '0px 2px 10px rgba(0, 0, 0, 0.2)' : 'none',
+        boxShadow: scrolled ? '0px 2px 10px transparent' : 'none',
         color: 'white',
         transition: 'background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
       }}

@@ -24,7 +24,7 @@ export default function Home() {
           height:'100vh'
         }}
         >
-         <Header />
+       
         <HeroBanner />
       
      </Box>
@@ -37,8 +37,7 @@ export default function Home() {
         <CustomizedTour />
         <OurTravelJourney />
         <AboutSection />
-        <NineArch />
-        <TourGrid />
+        <NineArch />     
       </main>
       <Footer />
       

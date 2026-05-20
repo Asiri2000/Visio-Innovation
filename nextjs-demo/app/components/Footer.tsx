@@ -1,135 +1,354 @@
 "use client";
 
-import NextLink from "next/link";
-
+import React from "react";
 import {
   Box,
   Container,
   Grid,
   Typography,
+  TextField,
+  InputAdornment,
+  IconButton,
   Link,
+  Stack,
+  Divider,
+  Button,
 } from "@mui/material";
+import SendIcon from "@mui/icons-material/SendOutlined";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import { Style } from "@mui/icons-material";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <Box
-      sx={{
-        bgcolor: "#1a1a1a",
-        color: "#fff",
-        py: 6,
-        mt: "auto",
-      }}
+      component="footer"
+      sx={{ bgcolor: "#ffffff", py: 8, color: "#333", alignContent: "center" }}
     >
-      <Container>
-        <Grid container spacing={4}>
-
-          {/* Column 1 */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h6"
+      <Container maxWidth="lg">
+        {/* Top Section: Logo & Newsletter */}
+        <Container sx={{ alignItems: "center" }}>
+          <Grid
+            container
+            spacing={4}
+            alignItems="center"
+            justifyContent="center"
+            paddingLeft="50px"
+          >
+            <Grid
+              item
+              xs={12}
+              md={6}
               sx={{
-                mb: 2,
-                fontWeight: "bold",
-                color: "#d97706",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
-              Blue Lanka Tours
-            </Typography>
+              {/* Logo Placeholder */}
+              <Box sx={{ mb: 2, textAlign: "center" }}>
+                <Typography>
+                  <img src="/images/footer/BLT-logo.webp" alt="Blue Lanka Tours Logo" style={{ height: "150px" }} />
+                </Typography>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                ></Typography>
+              </Box>
+              {/* Social Icons */}
+              <Stack direction="row" spacing={1}>
+                <IconButton size="small" sx={{ border: "1px solid #ccc" }}>
+                  <FacebookIcon fontSize="small" />
+                </IconButton>
+                <IconButton size="small" sx={{ border: "1px solid #ccc" }}>
+                  <TwitterIcon fontSize="small" />
+                </IconButton>
+                <IconButton size="small" sx={{ border: "1px solid #ccc" }}>
+                  <InstagramIcon fontSize="small" />
+                </IconButton>
+              </Stack>
+            </Grid>
 
-            <Typography
-              variant="body2"
-              sx={{ color: "#aaa", mb: 2 }}
-            >
-              Explore the exotic depths of Sri Lanka in all its beauty,
-              grandeur, mystery and luxury.
-            </Typography>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ maxWidth: 400, margin: "0 auto" }}>
+                <Typography variant="h6" gutterBottom>
+                  Receive Travel Inspirations
+                </Typography >
 
-            <Typography
-              variant="body2"
-              sx={{ color: "#aaa" }}
-            >
-              letstravel@bluelankatours.com
-            </Typography>
+                
+                <TextField
+                  fullWidth
+                  variant="standard"
+                  placeholder="Your email address *"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton edge="end">
+                          <SendIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+               
+                />
+                   <Button variant="contained" endIcon={<SendIcon />} sx={{ mt: 2 }}>
+                  Send
+                </Button>
+                
+              </Box>
+            </Grid>
           </Grid>
 
-          {/* Column 2 */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h6"
-              sx={{ mb: 2, fontWeight: "bold" }}
-            >
+          {/* Contact Info Row */}
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={4}
+            justifyContent="center"
+            alignItems="center"
+            sx={{ mt: 6 }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <WhatsAppIcon sx={{ color: "#25D366" }} />
+              <Typography variant="body2" fontWeight="bold">
+                (+94) 777 300 852
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <PhoneIcon sx={{ color: "#1976D2" }} />
+              <Typography variant="body2" fontWeight="bold">
+                (+94) 777 300 852
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <EmailIcon sx={{ color: "#F44336" }} />
+              <Typography variant="body2" fontWeight="bold">
+                letstravel@bluelankatours.com
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Awards Badges Placeholder */}
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            sx={{ mt: 4, flexWrap: "wrap", gap: 2 }}
+          >
+            {/* Replace these Box components with actual <img src="..." /> tags */}
+            <Typography sx={{ alignItems: "center" }}>
+              <img
+                src="/images/footer/awards.png"
+                alt="Awards"
+                style={{ height: "80px", alignSelf: "center" }}
+              />
+            </Typography>
+          </Stack>
+        </Container>
+
+        {/* Links Directory */}
+        <Grid container spacing={4} sx={{ mt: 6 }}>
+          {/* Explore The Site */}
+          <Grid item xs={16} md={4}>
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               Explore The Site
             </Typography>
-
-            {[
-              "Home",
-              "Tailor Made Tours",
-              "Discover Sri Lanka",
-              "About",
-              "Contact Us",
-            ].map((item) => (
-              <Link
-                key={item}
-                component={NextLink}
-                href="/"
-                underline="hover"
-                sx={{
-                  display: "block",
-                  mb: 1,
-                  color: "#aaa",
-                }}
-              >
-                {item}
-              </Link>
-            ))}
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <Stack spacing={1}>
+                  {[
+                    "Home",
+                    "Accommodation",
+                    "Tailor Made Tours",
+                    "Blog",
+                    "Discover Sri Lanka",
+                    "About",
+                    "DMC in Sri Lanka",
+                    "Travel Tips",
+                    "Blooming Smiles",
+                    "Little Hearts Project",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+              <Grid item xs={7}>
+                <Stack spacing={1}>
+                  {[
+                    "Sri Lanka Transfers",
+                    "Book Train Tickets",
+                    "Blooming Smiles",
+                    "Contact Us",
+                    "Booking Terms & Conditions",
+                    "Cookie Policy",
+                    "Sitemap",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+            </Grid>
           </Grid>
 
-          {/* Column 3 */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h6"
-              sx={{ mb: 2, fontWeight: "bold" }}
-            >
+          {/* Day Tours */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               Day Tours
             </Typography>
-
-            {[
-              "Day Tour of Colombo",
-              "Galle Day Tour",
-              "Kandy Day Tour",
-              "Whale Watching Day Tour",
-            ].map((item) => (
-              <Link
-                key={item}
-                component={NextLink}
-                href="/"
-                underline="hover"
-                sx={{
-                  display: "block",
-                  mb: 1,
-                  color: "#aaa",
-                }}
-              >
-                {item}
-              </Link>
-            ))}
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <Stack spacing={1}>
+                  {[
+                    "Day Tour of Colombo",
+                    "Galle Day Tour",
+                    "Geoffrey Bawa Works in Sri Lanka",
+                    "Hot Air Ballooning Day Tour",
+                    "Ingiriya Day Tour",
+                    "Kandy Day Tour",
+                    "Kithulgala White Water Rafting",
+                    "Little England Day Tour",
+                    "Sigiriya & Dambulla Day Tour",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+              <Grid item xs={6}>
+                <Stack spacing={1}>
+                  {[
+                    "Whale Watching Day Tour",
+                    "Yala National Park Day Tour",
+                    "Udawalawe National Park",
+                    "Wilpattu National Park Day Tour",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+            </Grid>
           </Grid>
 
+          {/* Itineraries */}
+          <Grid item xs={14} md={4}>
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+              Itineraries
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={7}>
+                <Stack spacing={1}>
+                  {[
+                    "Adventure & Nature based Tours",
+                    "Culture & Heritage Tours",
+                    "Family Tours",
+                    "Luxury Bespoke Tours",
+                    "North & East Coast Tours",
+                    "Wildlife Tours",
+                    "Sustainable Tours",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+              <Grid item xs={7}>
+                <Stack spacing={1}>
+                  {[
+                    "Wellness Tours",
+                    "Sports Based Tours",
+                    "Special Transit Tours",
+                    "Romantic Tours",
+                    "Popular Tours",
+                    "Purpose Built Tours",
+                  ].map((text) => (
+                    <Link
+                      href="#"
+                      key={text}
+                      underline="hover"
+                      color="text.secondary"
+                      variant="body2"
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </Stack>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
 
-        <Typography
-          variant="body2"
+        <Divider sx={{ mt: 8, mb: 4 }} />
+
+        {/* Footer Bottom Line */}
+        <Box
           sx={{
-            textAlign: "center",
-            mt: 6,
-            color: "#666",
-            borderTop: "1px solid #333",
-            pt: 3,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            flexWrap: "wrap",
           }}
         >
-          © Copyright 2026. Blue Lanka Tours. All Rights Reserved.
-        </Typography>
+          <Box>
+            <Typography
+              variant="h5"
+              color="text.secondary"
+              sx={{ opacity: 0.5 }}
+            >
+              8:39 AM
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              2026 May 20
+            </Typography>
+          </Box>
+          <Typography variant="caption" color="text.secondary">
+            © Copyright 2026. Blue Lanka Tours. All Rights Reserved
+          </Typography>
+        </Box>
       </Container>
     </Box>
   );
-}
+};
+
+export default Footer;

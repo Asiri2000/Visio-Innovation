@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function FullWidthGrid() {
   return (
-    <Box sx={{ flexGrow: 1 , bgcolor:'#fff' }}>
+    <Box sx={{ flexGrow: 1, bgcolor: "#fff" }}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 6, md: 6 }}>
           <Item>
@@ -33,18 +33,29 @@ export default function FullWidthGrid() {
                 display: "block",
               }}
             />
+
+            <img src="/images/Frame-137.svg" />
           </Item>
         </Grid>
         <Grid size={{ xs: 6, md: 6 }}>
           <Item>
             <Typography
-              variant="h5"
-              sx={{ fontWeight: "bold", mb: 2, color: "#000" }}
+              variant="h4"
+              sx={{
+                fontWeight: "bold",
+                mb: 2,
+                color: "#000",
+                textAlign: "left",
+              }}
             >
-              Magical Memories,<br /> Bespoke Experiences
+              Magical Memories,
+              <br /> Bespoke Experiences
             </Typography>
 
-            <Typography variant="body1" sx={{ lineHeight: 1.8, textAlign: 'left' }}>
+            <Typography
+              variant="body1"
+              sx={{ lineHeight: 1.8, textAlign: "left" }}
+            >
               Embark on a journey with Blue Lanka Tours, where every moment is
               meticulously crafted to leave an indelible mark on your heart. We
               understand that travel is more than just visiting destinations;
@@ -62,6 +73,26 @@ export default function FullWidthGrid() {
               By understanding your unique desires and preferences, we ensure
               that your Sri Lankan sojourn is not just a trip but a personalized
               story waiting to be told.
+            </Typography>
+
+            <Typography
+              sx={{
+                paddingBottom: "20px",
+                alignItems: "left",
+                textAlign: "left",
+                paddingTop: "30px",
+              }}
+            >
+              <button
+                style={{
+                  backgroundColor: "red",
+                  color: "white",
+                  borderRadius: "10px",
+                  padding: "10px 20px",
+                }}
+              >
+                PLAN YOUR TRIP TO SRI LANKA
+              </button>
             </Typography>
           </Item>
         </Grid>
