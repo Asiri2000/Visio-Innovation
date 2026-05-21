@@ -27,17 +27,22 @@ const Footer: React.FC = () => {
   return (
     <Box
       component="footer"
-      sx={{ bgcolor: "#ffffff", py: 8, color: "#333", alignContent: "center" }}
+      sx={{ bgcolor: "#ffffff", py: 8, color: "#333",  width:'100%', alignitems:'center' }}
     >
-      <Container maxWidth="lg">
+      <Container >
         {/* Top Section: Logo & Newsletter */}
-        <Container sx={{ alignItems: "center" }}>
+        <Container sx={{ maxwidth:'md', px:4 }}>
           <Grid
             container
             spacing={4}
             alignItems="center"
-            justifyContent="center"
-            paddingLeft="50px"
+            sx={{
+              width: "100%",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto",
+            }}
           >
             <Grid
               item
@@ -47,12 +52,17 @@ const Footer: React.FC = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                alignContent: "center",
               }}
             >
               {/* Logo Placeholder */}
               <Box sx={{ mb: 2, textAlign: "center" }}>
                 <Typography>
-                  <img src="/images/footer/BLT-logo.webp" alt="Blue Lanka Tours Logo" style={{ height: "150px" }} />
+                  <img
+                    src="/images/footer/BLT-logo.webp"
+                    alt="Blue Lanka Tours Logo"
+                    style={{ height: "150px" }}
+                  />
                 </Typography>
                 <Typography
                   variant="caption"
@@ -77,9 +87,8 @@ const Footer: React.FC = () => {
               <Box sx={{ maxWidth: 400, margin: "0 auto" }}>
                 <Typography variant="h6" gutterBottom>
                   Receive Travel Inspirations
-                </Typography >
+                </Typography>
 
-                
                 <TextField
                   fullWidth
                   variant="standard"
@@ -93,12 +102,14 @@ const Footer: React.FC = () => {
                       </InputAdornment>
                     ),
                   }}
-               
                 />
-                   <Button variant="contained" endIcon={<SendIcon />} sx={{ mt: 2 }}>
+                <Button
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  sx={{ mt: 2 }}
+                >
                   Send
                 </Button>
-                
               </Box>
             </Grid>
           </Grid>
@@ -109,7 +120,13 @@ const Footer: React.FC = () => {
             spacing={4}
             justifyContent="center"
             alignItems="center"
-            sx={{ mt: 6 }}
+            sx={{
+              mt: 6,
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "5 auto",
+            }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <WhatsAppIcon sx={{ color: "#25D366" }} />
@@ -132,32 +149,29 @@ const Footer: React.FC = () => {
           </Stack>
 
           {/* Awards Badges Placeholder */}
-          <Stack
-            direction="row"
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{ mt: 4, flexWrap: "wrap", gap: 2 }}
+
+          {/* Replace these Box components with actual <img src="..." /> tags */}
+          <Typography
+            sx={{
+              mt: 6,
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "5 auto",
+            }}
           >
-            {/* Replace these Box components with actual <img src="..." /> tags */}
-            <Typography sx={{ alignItems: "center" }}>
-              <img
-                src="/images/footer/awards.png"
-                alt="Awards"
-                style={{ height: "80px", alignSelf: "center" }}
-              />
-            </Typography>
-          </Stack>
+            <img src="/images/footer/awards.png" alt="Awards" style={{}} />
+          </Typography>
         </Container>
 
         {/* Links Directory */}
-        <Grid container spacing={4} sx={{ mt: 6 }}>
+        <Grid container spacing={4} sx={{ mt: 4 , fontSize:'8px',  mx: 'auto' }}>
           {/* Explore The Site */}
           <Grid item xs={16} md={4}>
-            <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+            <Typography variant="subtitle1" fontWeight="bold" gutterBottom >
               Explore The Site
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
               <Grid item xs={6}>
                 <Stack spacing={1}>
                   {[
@@ -215,7 +229,7 @@ const Footer: React.FC = () => {
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               Day Tours
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
               <Grid item xs={6}>
                 <Stack spacing={1}>
                   {[
@@ -269,7 +283,7 @@ const Footer: React.FC = () => {
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
               Itineraries
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={0.5}>
               <Grid item xs={7}>
                 <Stack spacing={1}>
                   {[
@@ -292,6 +306,8 @@ const Footer: React.FC = () => {
                     </Link>
                   ))}
                 </Stack>
+
+                
               </Grid>
               <Grid item xs={7}>
                 <Stack spacing={1}>
@@ -336,10 +352,18 @@ const Footer: React.FC = () => {
               color="text.secondary"
               sx={{ opacity: 0.5 }}
             >
-              8:39 AM
+              {new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
             </Typography>
+
             <Typography variant="caption" color="text.secondary">
-              2026 May 20
+              {new Date().toLocaleDateString("en-GB", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </Typography>
           </Box>
           <Typography variant="caption" color="text.secondary">

@@ -1,7 +1,6 @@
 import Header from '@/app/components/Header';
 import HeroBanner from '@/app/components/HeroBanner';
 import IntroSection from '@/app/components/IntroSection';
-import TourGrid from '@/app/components/TourGrid';
 import Footer from '@/app/components/Footer';
 import { Box } from '@mui/material';
 import Itineraries from '@/app/components/Itineraries';
@@ -21,10 +20,11 @@ export default function Home() {
           backgroundImage: 'url(/images/Elephants.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height:'100vh'
+          height:'100vh',
+          position: 'relative'
         }}
         >
-       
+         <Header />
         <HeroBanner />
       
      </Box>

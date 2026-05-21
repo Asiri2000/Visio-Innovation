@@ -14,7 +14,7 @@ export default function HeroBanner() {
         textAlign: 'center',
       
     }}>
-      <Box sx={{ position: 'relative', zIndex: 1, color: '#fff', px: 2 }}>
+      <Box sx={{ position: 'relative', zIndex: 1, color: '#fff', px: 2, pt: '500px' }}>
         <Typography variant="h1" sx={{ fontWeight: '10px', mb: 2, fontFamily: "Minion Pro, Georgia, Times New Roman, serif" }}>
           Blue Lanka Tours
         </Typography>

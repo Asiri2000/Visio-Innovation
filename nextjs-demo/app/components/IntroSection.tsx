@@ -109,7 +109,7 @@ export default function AwardsCarousel() {
               component="img"
               src={award.topBadge}
               alt="Award Badge"
-              sx={{ height: 60, mb: 3, objectFit: 'contain' }}
+              sx={{ height: 100, mb: 3, objectFit: 'contain' }}
             />
 
             {/* Laurel Wreath Area */}
